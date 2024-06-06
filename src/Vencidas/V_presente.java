@@ -1,6 +1,7 @@
 package Vencidas;
 
 import calculadora.Cal_intereses;
+import calculadora.Cal_tiempo;
 import javax.swing.JOptionPane;
 
 /*
@@ -73,8 +74,9 @@ public class V_presente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         resultado = new javax.swing.JTextField();
-        cmbtiempo = new javax.swing.JComboBox<>();
+        cmbinteres = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
+        cmbtiempo = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
@@ -97,9 +99,11 @@ public class V_presente extends javax.swing.JFrame {
 
         jLabel5.setText("Resultado");
 
-        cmbtiempo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dias", "Mensual", "Bimestres", "Trimestres", "Cuatrimestres", "Semestres", "Años" }));
+        cmbinteres.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dias", "Mensual", "Bimestres", "Trimestres", "Cuatrimestres", "Semestres", "Años" }));
 
         jButton2.setText("Nuevo");
+
+        cmbtiempo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dias", "Mensual", "Bimestres", "Trimestres", "Cuatrimestres", "Semestres", "Años" }));
 
         jMenu1.setText("Menu");
         jMenuBar1.add(jMenu1);
@@ -125,26 +129,36 @@ public class V_presente extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addGap(25, 25, 25)))
+                                .addGap(54, 54, 54)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(89, 89, 89)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(anualidad, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGap(6, 6, 6)
-                                                    .addComponent(jButton1)))
-                                            .addComponent(interes, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cmbtiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(41, 41, 41)
+                                                .addComponent(jButton1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(interes)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addComponent(anualidad, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                                .addGap(18, 18, 18)))
+                                        .addComponent(cmbinteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(71, 71, 71)
-                                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton2))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(resultado, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                            .addComponent(tiempo))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(29, 29, 29)
+                                                .addComponent(jButton2)
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(cmbtiempo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                             .addComponent(jLabel3))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,20 +169,21 @@ public class V_presente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(interes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbtiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbinteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(anualidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbtiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addGap(63, 63, 63))
                     .addGroup(layout.createSequentialGroup()
@@ -188,11 +203,13 @@ public class V_presente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(anualidad, "Por favor llene todos los campos", "Advertencia", JOptionPane.WARNING_MESSAGE);
         } else {
             double i = Double.parseDouble(interes.getText());
+             i = i / 100;
             double m = Double.parseDouble(anualidad.getText());
             double t = Double.parseDouble(tiempo.getText());
-            String ti = (String) cmbtiempo.getSelectedItem();
-            i = i / 100;
-            i = Cal_intereses.caltiempo(ti, i);
+            String ti = (String) cmbinteres.getSelectedItem();
+            String tt=(String) cmbtiempo.getSelectedItem();
+            t = Cal_tiempo.caltiempo(ti, tt, t);
+            //i = Cal_intereses.caltiempo(ti, i);
             double r = 0;
 
             switch (b) {
@@ -207,10 +224,8 @@ public class V_presente extends javax.swing.JFrame {
                 case 3:
                     r=m/((Math.pow(1+i,t-1))/i);
                     resultado.setText(String.valueOf(r));
-
                     break;
                 case 4:
-
                     r = m/(1+i*t);
                     resultado.setText(String.valueOf(r));
                     break;
@@ -258,6 +273,7 @@ public class V_presente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField anualidad;
+    private javax.swing.JComboBox<String> cmbinteres;
     private javax.swing.JComboBox<String> cmbtiempo;
     private javax.swing.JTextField interes;
     private javax.swing.JButton jButton1;
