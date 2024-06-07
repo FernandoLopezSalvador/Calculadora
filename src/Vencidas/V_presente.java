@@ -209,7 +209,7 @@ public class V_presente extends javax.swing.JFrame {
             String ti = (String) cmbinteres.getSelectedItem();
             String tt=(String) cmbtiempo.getSelectedItem();
             t = Cal_tiempo.caltiempo(ti, tt, t);
-            //i = Cal_intereses.caltiempo(ti, i);
+            i = Cal_intereses.caltiempo(ti, i);
             double r = 0;
 
             switch (b) {
@@ -233,7 +233,6 @@ public class V_presente extends javax.swing.JFrame {
                     break;
             }
         }
-
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
